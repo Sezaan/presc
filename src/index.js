@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import reportWebVitals from './reportWebVitals';
+import Diagnosis from'./components/Diagnosis'
+import TestAdvice from'./components/TestAdvice'
 import ChiefComplaints from'./components/ChiefComplaints'
 
 ReactDOM.render(
-  <ChiefComplaints></ChiefComplaints>
+  <div>
+    <TestAdvice></TestAdvice>
+  </div>
+  
   ,
   document.getElementById('root')
 );
