@@ -3,7 +3,7 @@ import ListItem from "./ListItem";
 import style from "../style.module.css";
 import TextField from '@material-ui/core/TextField'
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import { IconButton,Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 
 class ChiefComplaints extends Component {
