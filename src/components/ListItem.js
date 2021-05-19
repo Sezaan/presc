@@ -10,7 +10,7 @@ class ListItem extends Component {
         return ( 
             <div className={style.listItem} >
 
-            <p>{this.props.item}</p>
+            <p style={{padding:"10px"}}>{this.props.item}</p>
             <IconButton size="small" ><CloseOutlinedIcon fontSize="large"/></IconButton>
 
             </div>

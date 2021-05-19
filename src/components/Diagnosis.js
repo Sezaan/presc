@@ -26,7 +26,7 @@ class Diagnosis extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span className={style.emptySpace}></span>
+                        <span style={{width:"265px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 

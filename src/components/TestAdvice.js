@@ -21,12 +21,12 @@ class TestAdvice extends Component {
             <div>
                 <div className={style.container}>
                     <div className={style.box1}>
-                        <span className={style.header}>TestAdvice</span>
+                        <span className={style.header}>Test Advice</span>
                         <InfoOutlinedIcon
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:'260px'}}></span>
+                        <span style={{width:'255px'}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
@@ -36,7 +36,7 @@ class TestAdvice extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"500px"}} variant="outlined" label="Write Test Point">
+                        <TextField style={{width:"500px"}} variant="outlined" label="Write Test Name">
                         </TextField>
                         <Button variant = "outlined" size="small">
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>

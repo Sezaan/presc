@@ -4,11 +4,12 @@ import './App.css';
 import reportWebVitals from './reportWebVitals';
 import Diagnosis from'./components/Diagnosis'
 import TestAdvice from'./components/TestAdvice'
+import MedicineHistory from './components/MedicineHistory'
 import ChiefComplaints from'./components/ChiefComplaints'
 
 ReactDOM.render(
   <div>
-    <TestAdvice></TestAdvice>
+    <MedicineHistory></MedicineHistory>
   </div>
   
   ,
