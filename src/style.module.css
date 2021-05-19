@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+* { font-family: 'Oxygen', sans-serif; }
+
+.listItem {
+    height: fit-content;
+    width: 500px;
+    margin-bottom: 10px;
+    border-radius: 4px; 
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-content:space-between;
+    
+
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  
+  .close {
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  
+  .container{
+    width: 500px;
+    
+}
+
+.box1{
+    display: flex;
+}
+.header{
+    font-family: 'Oxygen', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: #000000;
+}
+.infoicon{
+    background: #ffffffbb;
+}
+.template{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height */
+    text-align: center;
+    text-decoration-line: underline;
+    
+    color: #444444;
+}
+.emptySpace{
+    width: 265px;
+}
+.box2{
+    height: fit-content;
+    width: 500px;
+    left: 0px;
+    top: 0px;
+    margin-top: 16px;
+    border-radius: 4px;
+    
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 4px;    
+}
+.box3{
+    width: 500px;
+    height: max-content;
+    margin-top: 7px;
+    background: #FFFFFF;
+    display: flex;
+}
+
+
+.textbox{
+    width: 500px;
+    height: 40px;
+    position: absolute;
+    margin-top: 17px;
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.paragraph{
+  margin-bottom: 5px;
+  width: 480px;
+  
+}
+  
