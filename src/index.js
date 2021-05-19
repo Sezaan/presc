@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import reportWebVitals from './reportWebVitals';
-import Diagnosis from'./components/Diagnosis'
+import MedicineHistory from './components/MedicineHistory'
 
 ReactDOM.render(
-  <Diagnosis></Diagnosis>
+  <MedicineHistory></MedicineHistory>
   ,
   document.getElementById('root')
 );
