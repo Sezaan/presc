@@ -5,9 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import MedicineList from './components/MedicineList'
 import Treatment from './components/Treatment';
 import Diagnosis from './components/Diagnosis'
+import PatientInfo from './components/PatientInfo'
 
 ReactDOM.render(
-  <Treatment></Treatment>
+  <div style={{display:"flex",flexDirection:"row"}}>
+    <PatientInfo></PatientInfo>
+  </div>
+  
   ,
   document.getElementById('root')
 );
