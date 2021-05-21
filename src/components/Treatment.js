@@ -32,25 +32,25 @@ class Treatment extends Component {
       <div>
         <div className={style.containerTreatment}>
           <div className={style.box1}>
-            <span className={style.header}>Medicine History</span>
+            <span className={style.header}>Treatment</span>
             <InfoOutlinedIcon
               fontSize="small"
               style={{ color: "#aaaaaa" }}
             ></InfoOutlinedIcon>
-            <span style={{ width: "280px" }}></span>
+            <span style={{ width: "160px" }}></span>
             <span className={style.template}>Load templates</span>
           </div>
           <div style={{ marginTop: "18px" }}>
             <TextField
               label="Medicine Name"
               variant="outlined"
-              style={{ width: "583px" }}
+              style={{ width: "400px" }}
             />
             <div
               style={{
                 width: "583px",
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "start",
                 marginTop: "18px",
               }}
             >
@@ -58,29 +58,29 @@ class Treatment extends Component {
                 id="outlined-basic"
                 label="Dosage"
                 variant="outlined"
-                style={{ width: "285px" }}
+                style={{ width: "200px" }}
               />
               <TextField
                 id="outlined-basic"
                 label="Duration"
                 variant="outlined"
-                style={{ width: "285px" }}
+                style={{ width: "200px" }}
               />
             </div>
             <TextField
               label="Direction"
               variant="outlined"
-              style={{ width: "583px", marginTop: "18px" }}
+              style={{ width: "400px", marginTop: "18px" }}
             />
             <TextField
               label="Additional Comments"
               variant="outlined"
-              style={{ width: "583px", marginTop: "18px" }}
+              style={{ width: "400px", marginTop: "18px" }}
             />
             <button
               style={{
                 background: "#444444",
-                width: "583px",
+                width: "400px",
                 height: "40px",
                 borderRadius: "4px",
                 display: "flex",
@@ -109,7 +109,7 @@ class Treatment extends Component {
                 fontSize="small"
                 style={{ color: "#aaaaaa" }}
               ></InfoOutlinedIcon>
-              <span style={{ width: "200px" }}></span>
+              <span style={{ width: "100px" }}></span>
             </div>
             <div style={{ marginTop: "18px" }}>
               {this.state.value.map((item) => (

@@ -26,7 +26,7 @@ class ChiefComplaints extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"195px"}} > </span>
+                        <span style={{width:"99px"}} > </span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
@@ -36,7 +36,7 @@ class ChiefComplaints extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"500px"}} variant="outlined" label="Write CC Point">
+                        <TextField style={{width:"400px"}} variant="outlined" label="Write CC Point">
                         </TextField>
                         <Button variant = "outlined" size="small">
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>

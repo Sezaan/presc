@@ -36,7 +36,7 @@ class Diagnosis extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"500px"}} variant="outlined" label="Write Diagnosis Point">
+                        <TextField style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point">
                         </TextField>
                         <Button variant = "outlined" size="small">
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>

@@ -23,7 +23,7 @@
   }
 
   .containerTreatment{
-    width: 583px;
+    width: 400px;
     /*border: 2px solid rosybrown;*/
   }
 
@@ -55,7 +55,7 @@
     color: #444444;
 }
 .emptySpace{
-    width: 265px;
+    width: 170px;
 }
 .box2{
     height: fit-content;

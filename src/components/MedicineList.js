@@ -7,8 +7,8 @@ class MedicineList extends Component {
     
     render() { 
         return ( 
-            <div style={{width:"583px", marginTop:"10px"}}>
-                <table style={{border:"1px solid #444444",width:"583px",height:"124px"}}>
+            <div style={{width:"400px", marginTop:"10px"}}>
+                <table style={{border:"1px solid #444444",width:"400px",height:"124px"}}>
                     <tr>
                         <td colSpan={3} >
                             <div style={{display:"flex",justifyContent:"space-between"}}>

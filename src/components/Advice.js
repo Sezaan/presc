@@ -55,7 +55,7 @@ class Advice extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"300px"}}></span>
+                        <span style={{width:"200px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
@@ -69,7 +69,7 @@ class Advice extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"500px"}} variant="outlined" label="Write Advice Point" onChange={this.handleChange}>
+                        <TextField style={{width:"400px"}} variant="outlined" label="Write Advice Point" onChange={this.handleChange}>
                         </TextField>
                         <Button type="submit" variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>
