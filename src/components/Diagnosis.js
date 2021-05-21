@@ -8,14 +8,38 @@ import AddIcon from '@material-ui/icons/Add';
 
 class Diagnosis extends Component {
     state = {
-        values: [
-            { item: "diagnosis one" },
-            { item: "diagnosis two" },
-            { item: "diagnosis three" },
-            { item: "diagnosis four" },
-
-        ],
+        item:"",
+        values: [ ],
     };
+
+    handleChange = (event) =>{
+        console.log(event.target.value);
+        var val = event.target.value;
+        this.setState({item: val});
+    }
+
+    handleAdd=()=>{
+        var values = this.state.values;
+        var newValue = this.state.item;
+        console.log("newValue is ",newValue);
+        if(newValue!=="")
+            {
+                newValue = {item : newValue};
+                values.push(newValue);
+            }
+
+        this.setState(
+            {
+                values: values,
+            }
+        );
+    }
+
+    handleCross = item =>{
+        var values = this.state.values.filter(c => c.item!== item );
+        this.setState({values});
+    }
+
     render() {
         return (
             <div>
@@ -26,19 +50,22 @@ class Diagnosis extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span className={style.emptySpace}></span>
+                        <span style={{width:"170px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
                     <div className={style.box2}>
                         {this.state.values.map((listItem) => (
-                            <ListItem item={listItem.item}></ListItem>
+                            <ListItem 
+                            item={listItem.item}
+                            onCrossClicked={this.handleCross}
+                            ></ListItem>
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point">
+                        <TextField style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point" onChange={this.handleChange}>
                         </TextField>
-                        <Button variant = "outlined" size="small">
+                        <Button variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>
                         </Button>
                     </div>

@@ -8,12 +8,12 @@ class MedicineList extends Component {
     render() { 
         return ( 
             <div style={{width:"400px", marginTop:"10px"}}>
-                <table style={{border:"1px solid #444444",width:"400px",height:"124px"}}>
+                <table style={{border:"1px solid #444444",width:"450px",height:"124px"}}>
                     <tr>
                         <td colSpan={3} >
                             <div style={{display:"flex",justifyContent:"space-between"}}>
                                 <span style={{marginLeft:"23px",marginTop:"10px",fontWeight:"bold"}}>{this.props.medicine}</span>
-                                <IconButton size="small" ><CloseOutlinedIcon fontSize="small" color="secondary"/></IconButton>
+                                <IconButton size="small" onClick={() => this.props.onCrossClicked(this.props.medicine)}><CloseOutlinedIcon fontSize="small" color="secondary"/></IconButton>
                             </div>
                         </td>
                     </tr>

@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import reportWebVitals from './reportWebVitals';
 import GeneralPrescription from './components/GeneralPrescription'
-
+import ButtonList from './components/ButtonList'
+import PatientInfo from './components/PatientInfo'
 
 
 ReactDOM.render(
-  <div style={{display:"flex",flexDirection:"row"}}>
-    <GeneralPrescription></GeneralPrescription>
+  <div style={{background:"#e5e5e5"}}>
+    <ButtonList/>
+    <PatientInfo/>
+    <GeneralPrescription/>
   </div>
+  
   ,
   document.getElementById('root')
 );

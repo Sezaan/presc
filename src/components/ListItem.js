@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import IconButton from "@material-ui/core/IconButton";
 
 class ListItem extends Component {
+
   render() {
     return (
       <div className={style.listItem}>
@@ -18,6 +19,7 @@ class ListItem extends Component {
       </div>
     );
   }
+
 }
 
 export default ListItem;

@@ -15,7 +15,7 @@ class PatientInfo extends Component {
     }
     render() { 
         return ( 
-        <div style={{width:"1200px",border:"1px solid black"}}>
+        <div style={{width:"1318px",border:"1px solid black",margin:'1rem',background:"#ffffff"}}>
             <div style={{display:"flex"}}>
                 <span style={{fontWeight:"bold",fontSize:"20px",padding:"10px"}}>Patient Info</span>
                 <span style={{width:"750px"}}></span>

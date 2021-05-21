@@ -9,13 +9,7 @@ import AddIcon from '@material-ui/icons/Add';
 class Advice extends Component {
     state = {
         item : "",
-        values: [
-            { item: "Advice one" },
-            { item: "Advice two" },
-            { item: "Advice three" },
-            { item: "Advice four" },
-
-        ],
+        values: [ ],
     };
 
     handleChange = (event) =>{

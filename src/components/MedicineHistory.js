@@ -9,13 +9,7 @@ import AddIcon from '@material-ui/icons/Add';
 class MedicineHistory extends Component {
     state = {
         item : "",
-        values: [
-            { item: "medicine one" },
-            { item: "medicine two" },
-            { item: "medicine three" },
-            { item: "medicine four" },
-
-        ],
+        values: [ ],
     };
 
     handleChange = (event) =>{
