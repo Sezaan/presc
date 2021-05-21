@@ -2,16 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
 import reportWebVitals from './reportWebVitals';
-import MedicineList from './components/MedicineList'
-import Treatment from './components/Treatment';
-import Diagnosis from './components/Diagnosis'
-import PatientInfo from './components/PatientInfo'
+import GeneralPrescription from './components/GeneralPrescription'
+
+
 
 ReactDOM.render(
   <div style={{display:"flex",flexDirection:"row"}}>
-    <PatientInfo></PatientInfo>
+    <GeneralPrescription></GeneralPrescription>
   </div>
-  
   ,
   document.getElementById('root')
 );

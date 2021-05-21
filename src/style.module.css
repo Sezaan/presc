@@ -3,7 +3,7 @@
 
 .listItem {
     height: fit-content;
-    width: 500px;
+    width: 400px;
     margin-bottom: 10px;
     border-radius: 4px; 
     padding: 5px;
@@ -19,7 +19,7 @@
   }
   
   .container{
-    width: 500px;
+    width: 400px;
   }
 
   .containerTreatment{
@@ -59,7 +59,7 @@
 }
 .box2{
     height: fit-content;
-    width: 500px;
+    width: 400px;
     left: 0px;
     top: 0px;
     margin-top: 16px;
@@ -70,7 +70,7 @@
     border-radius: 4px;    
 }
 .box3{
-    width: 500px;
+    width: 400px;
     height: max-content;
     margin-top: 7px;
     background: #FFFFFF;
@@ -79,7 +79,7 @@
 
 
 .textbox{
-    width: 500px;
+    width: 400px;
     height: 40px;
     position: absolute;
     margin-top: 17px;

@@ -6,14 +6,14 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Button } from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 
-class MedicineHistory extends Component {
+class Advice extends Component {
     state = {
         item : "",
         values: [
-            { item: "medicine one" },
-            { item: "medicine two" },
-            { item: "medicine three" },
-            { item: "medicine four" },
+            { item: "Advice one" },
+            { item: "Advice two" },
+            { item: "Advice three" },
+            { item: "Advice four" },
 
         ],
     };
@@ -50,12 +50,12 @@ class MedicineHistory extends Component {
             <div>
                 <div className={style.container}>
                     <div className={style.box1}>
-                        <span className={style.header}>Medicine History</span>
+                        <span className={style.header}>Advice</span>
                         <InfoOutlinedIcon
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"100px"}}></span>
+                        <span style={{width:"300px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
@@ -69,7 +69,7 @@ class MedicineHistory extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"500px"}} variant="outlined" label="Write Medicine Name" onChange={this.handleChange}>
+                        <TextField style={{width:"500px"}} variant="outlined" label="Write Advice Point" onChange={this.handleChange}>
                         </TextField>
                         <Button type="submit" variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>
@@ -81,4 +81,4 @@ class MedicineHistory extends Component {
     }
 }
 
-export default MedicineHistory;
+export default Advice;
