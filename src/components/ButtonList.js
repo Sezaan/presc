@@ -7,48 +7,58 @@ class Buttonlist extends Component {
     state = {  }
     render() { 
         return ( 
-        <di>
+        <div>
             <div style={{display:"flex",justifyContent:"center",margin:"1rem"}}>
                 <Button
                 id="create"
                 variant="contained"
                 color="secondary"
                 startIcon={<Add  />}
-                style={{borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
                 >Create</Button>
                 <Button
                 id="archive"
                 variant="outlined"
-                style={{border:"1px solid #E55050",borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{border:"1px solid #E55050",borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
-                >Archive</Button>
+                >
+                    <span style={{color:"#E55050"}}>Archive</span>
+                </Button>
                 <Button
                 id="patient"
                 variant="outlined"
-                style={{border:"1px solid #E55050",borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{border:"1px solid #E55050",borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
-                >Patients</Button>
+                >
+                    <span style={{color:"#E55050"}}>Patients</span>
+                </Button>
                 <Button
                 id="page-setup"
                 variant="outlined"
-                style={{border:"1px solid #E55050",borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{border:"1px solid #E55050",borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
-                >Page Setup</Button>
+                >
+                    <span style={{color:"#E55050"}}>Page Setup</span>
+                </Button>
                 <Button
                 id="templates"
                 variant="outlined"
-                style={{border:"1px solid #E55050",borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{border:"1px solid #E55050",borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
-                >Templates</Button>
+                >
+                    <span style={{color:"#E55050"}}>Templates</span>
+                </Button>
                 <Button
                 id="profile"
                 variant="outlined"
-                style={{border:"1px solid #E55050",borderRadius:"0",width:"8rem",margin:"0.2rem"}}
+                style={{border:"1px solid #E55050",borderRadius:"0",width:"10rem",margin:"0.4rem"}}
                 size="medium"
-                >Profile</Button>
+                >
+                    <span style={{color:"#E55050"}}>Profile</span>
+                </Button>
             </div>
-        </di>
+        </div>
         );
     }
 }

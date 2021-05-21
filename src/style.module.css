@@ -99,4 +99,19 @@ table,th,td{
   border: 1px solid #444444;
   border-collapse: collapse;
 }
+
+.header{
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(3,1.5rem);
+  justify-content: center;
+  align-content: center;
+}
+
+.footer{
+    height: 8rem;
+    width: auto;
+    background: rgba(232, 82, 79, 0.1);
+}
   

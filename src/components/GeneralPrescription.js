@@ -17,7 +17,7 @@ class GeneralPrescription extends Component {
   state = {};
   render() {
     return (
-      <div style={{border:"1px solid #e5e5e5",margin:"1rem", background:"#FFFFFF"}}>
+      <div style={{borderRadius:"1px",margin:"1rem", background:"#FFFFFF",width:"1350px"}}>
         <div
           style={{
             width: "1300px",
