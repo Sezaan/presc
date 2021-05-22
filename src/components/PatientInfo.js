@@ -18,20 +18,21 @@ class PatientInfo extends Component {
         <div style={{width:"1350px",borderRadius:"1px",margin:'1rem',background:"#ffffff",}}>
             <div style={{display:"flex"}}>
                 <span style={{fontWeight:"bold",fontSize:"20px",padding:"10px"}}>Patient Info</span>
-                <span style={{width:"750px"}}></span>
+                <span style={{width:"950px"}}></span>
                 <span style={{fontWeight:"bold",fontSize:"20px",padding:"10px"}}>Today</span>
             </div>
             <div style={{padding:"10px"}}>
-                <TextField size="small" style={{width:"611px",marginRight:"5px"}} label="Patient Name" variant="outlined"></TextField>
+                <TextField size="small" style={{width:"815px",marginRight:"5px"}} label="Patient Name" variant="outlined"></TextField>
                 <TextField size="small" label="Patient ID" variant="outlined"></TextField>
                 <span style={{fontSize:"16px",fontWeight:"bold",marginLeft:"70px"}}>{this.getDate()}</span>
             </div>
             <div style={{padding:"10px"}}>
-                <TextField style={{marginRight:"5px"}} size="small" label="Contact Number" variant="outlined"></TextField>
-                <TextField style={{marginRight:"5px"}} size="small" label="Sex" variant="outlined"></TextField>
-                <TextField style={{marginRight:"5px"}} size="small" label="Age" variant="outlined"></TextField>
-                <TextField style={{marginRight:"5px"}} size="small" label="Year of Birth" variant="outlined"></TextField>
-                <TextField style={{marginLeft:"63px"}} size="small" label="Serial" variant="outlined"></TextField>
+                <TextField style={{marginRight:"5px",width:"200px"}} size="small" label="Contact Number" variant="outlined"></TextField>
+                <TextField style={{marginRight:"5px",width:" 200px"}} size="small" label="Contact Number" variant="outlined"></TextField>
+                <TextField style={{marginRight:"5px",width:"200px"}} size="small" label="Sex" variant="outlined"></TextField>
+                <TextField style={{marginRight:"5px",width:"200px"}} size="small" label="Age" variant="outlined"></TextField>
+                <TextField style={{marginRight:"5px",width:"200px"}} size="small" label="Year of Birth" variant="outlined"></TextField>
+                <TextField style={{marginLeft:"63px",width:"220px"}} size="small" label="Serial" variant="outlined"></TextField>
             </div>
             
         </div>

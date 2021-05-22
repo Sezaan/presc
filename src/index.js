@@ -2,22 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 import reportWebVitals from "./reportWebVitals";
-import GeneralPrescription from "./components/GeneralPrescription";
-import ButtonList from "./components/ButtonList";
-import PatientInfo from "./components/PatientInfo";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Prescription from './pages/Prescription'
+
 
 ReactDOM.render(
-  <div>
-    <Header></Header>
-    <div style={{ background: "#e5e5e5",display:"grid",justifyItems:"center"}}>
-      <ButtonList />
-      <PatientInfo />
-      <GeneralPrescription />
-    </div>
-    <Footer />
-  </div>,
+  <Prescription></Prescription>
+  ,
 
   document.getElementById("root")
 );

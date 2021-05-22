@@ -113,7 +113,7 @@ class GeneralPrescription extends Component {
           }}
         >
           <div
-            style={{ gridColumn: "1/2", gridRow: "1/2", width: "fit-content" }}
+            style={{ gridColumn: "1/5", gridRow: "1/2", width: "fit-content" }}
           >
             <Diagnosis></Diagnosis>
           </div>
