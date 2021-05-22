@@ -11,7 +11,7 @@ class Prescription extends Component {
         return ( 
             <div >
             <Header></Header>
-            <div style={{ background: "#E5E5E5",display:"grid",width:"fit_content"}}>
+            <div style={{ margin:"0px",background: "#E5E5E5",display:"grid",justifySelf:"center"}}>
               <ButtonList />
               <PatientInfo />
               <GeneralPrescription />
