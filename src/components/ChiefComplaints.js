@@ -50,7 +50,7 @@ class ChiefComplaints extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"99px"}} > </span>
+                        <span style={{width:"125px"}} > </span>
                         <span className={style.template}>Load templates</span>
                     </div>
 

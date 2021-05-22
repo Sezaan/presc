@@ -49,7 +49,7 @@ class Advice extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"200px"}}></span>
+                        <span style={{width:"220px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 

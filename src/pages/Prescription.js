@@ -9,9 +9,9 @@ class Prescription extends Component {
     state = {  }
     render() { 
         return ( 
-            <div>
+            <div >
             <Header></Header>
-            <div style={{ background: "#E5E5E5",display:"grid",justifyItems:"center"}}>
+            <div style={{ background: "#E5E5E5",display:"grid",width:"fit_content"}}>
               <ButtonList />
               <PatientInfo />
               <GeneralPrescription />

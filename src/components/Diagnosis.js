@@ -50,7 +50,7 @@ class Diagnosis extends Component {
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"170px"}}></span>
+                        <span style={{width:"192px"}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 

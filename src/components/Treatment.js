@@ -77,7 +77,7 @@ class Treatment extends Component {
               fontSize="small"
               style={{ color: "#aaaaaa" }}
             ></InfoOutlinedIcon>
-            <span style={{ width: "160px" }}></span>
+            <span style={{ width: "238px" }}></span>
             <span className={style.template}>Load templates</span>
           </div>
           <div style={{ marginTop: "18px" }}>

@@ -36,7 +36,6 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 25px;
-
     color: #000000;
 }
 .infoicon{
@@ -100,7 +99,7 @@ table,th,td{
   border-collapse: collapse;
 }
 
-.header{
+.pageHeader{
   background-color: #FFFFFF;
   display: grid;
   grid-template-columns: repeat(12,1fr);
@@ -111,7 +110,7 @@ table,th,td{
 
 .footer{
     height: 8rem;
-    width: auto;
+    width: 100pc;
     background: rgba(232, 82, 79, 0.1);
 }
   
