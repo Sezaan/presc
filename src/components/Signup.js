@@ -8,12 +8,24 @@ class Signup extends Component {
     return (
       <div className={style.loginContainer}>
         <div className={style.loginBox1}>
-          <span className={style.loginText1}>LOGIN</span>
+          <span className={style.loginText1}>Signup</span>
+          <TextField
+            variant="outlined"
+            label="Full Name"
+            size="small"
+            style={{ width: "28rem", marginTop: "3.375rem" }}
+          ></TextField>
+          <TextField
+            variant="outlined"
+            label="Mobile"
+            size="small"
+            style={{ width: "28rem", marginTop: "2.69rem" }}
+          ></TextField>
           <TextField
             variant="outlined"
             label="Email Address"
             size="small"
-            style={{ width: "28rem", marginTop: "3.375rem" }}
+            style={{ width: "28rem", marginTop: "2.69rem" }}
           ></TextField>
           <TextField
             variant="outlined"
@@ -21,14 +33,14 @@ class Signup extends Component {
             size="small"
             style={{ width: "28rem", marginTop: "2.69rem" }}
           ></TextField>
-          <button className={style.loginButton1}>Login</button>
-          <a href="#" className={style.loginText2}>
-            Forgot Password?
-          </a>
+          <button className={style.loginButton1}>Create an Account</button>
+          <span  className={style.loginText2}>
+
+          </span>
         </div>
         <div className={style.loginBox2}>
-          <span className={style.loginText3}>Don't Have an Account?</span>
-          <button className={style.loginButton2}>Signup for FREE</button>
+          <span className={style.loginText3}>Have an Account?</span>
+          <button className={style.loginButton2}>Login</button>
         </div>
       </div>
     );
