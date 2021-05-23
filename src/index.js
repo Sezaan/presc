@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 import reportWebVitals from "./reportWebVitals";
-import Prescription from './pages/Prescription'
+import LoginPage from './pages/LoginPage'
 
 
 ReactDOM.render(
-  <Prescription></Prescription>
+  <LoginPage></LoginPage>
   ,
 
   document.getElementById("root")
