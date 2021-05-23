@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginSignupHeader from '../components/LoginSignupHeader';
-import Login from '../components/Login'
+import Signup from '../components/Signup'
 import style from "../style.module.css";
 
 
@@ -12,7 +12,7 @@ class LoginPage extends Component {
             <div className={style.pageContainer}>
                 <LoginSignupHeader></LoginSignupHeader>
                 <div className={style.componentPlacer}>
-                <Login></Login>
+                <Signup></Signup>
                 </div>
                 <div className={style.loginSignupFooter}></div>
             </div>

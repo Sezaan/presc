@@ -221,7 +221,6 @@ td {
   display: flex;
 }
 .loginSignupFooter {
-  position: fixed;
   left: 0;
   bottom: 0;
   height: 10rem;
@@ -229,4 +228,13 @@ td {
   background: rgba(232, 82, 79, 0.1);
   color: white;
   text-align: center;
+}
+.pageContainer{
+  display:flex;
+  flex-direction:column;
+}
+.componentPlacer{
+  align-self: center;
+  margin-top: 5rem;
+  margin-bottom: 10rem;
 }

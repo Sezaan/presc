@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginSignupHeader from '../components/LoginSignupHeader';
-import Login from '../components/Login'
+import SetNewPassword from '../components/SetNewPassword'
 import style from "../style.module.css";
 
 
@@ -12,7 +12,7 @@ class LoginPage extends Component {
             <div className={style.pageContainer}>
                 <LoginSignupHeader></LoginSignupHeader>
                 <div className={style.componentPlacer}>
-                <Login></Login>
+                <SetNewPassword></SetNewPassword>
                 </div>
                 <div className={style.loginSignupFooter}></div>
             </div>
