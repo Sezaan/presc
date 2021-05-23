@@ -13,13 +13,13 @@ class Login extends Component {
             variant="outlined"
             label="Email Address"
             size="small"
-            style={{ width: "28rem", marginTop: "3.375rem" }}
+            style={{ width: "26rem", marginTop: "3.375rem" }}
           ></TextField>
           <TextField
             variant="outlined"
             label="Password"
             size="small"
-            style={{ width: "28rem", marginTop: "2.69rem" }}
+            style={{ width: "26rem", marginTop: "2.69rem" }}
           ></TextField>
           <button className={style.loginButton1}>Login</button>
           <a href="#" className={style.loginText2}>
