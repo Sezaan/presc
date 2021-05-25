@@ -6,11 +6,10 @@ class Header extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className={style.pageHeader}>
-                <TextButton size="small" style={{gridColumn:"9/10",gridRow:"2/3"}}>Contact Us</TextButton>
-                <TextButton size="small" style={{gridColumn:"10/11",gridRow:"2/3",background:"#E55050"}}>
-                    <span style={{fontWeight: "bold",color:"white"}}>Dashboard</span></TextButton>
-            </div>
+            <header className={style.pageHeader}>
+                <button className={style.loginButton3}> Contact Us </button>
+                <button className={style.loginButton4}>Dashboard</button>
+            </header>
          );
     }
 }
