@@ -6,7 +6,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Button } from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 
-class Diagnosis extends Component {
+class TestAdvice extends Component {
     state = {
         item:"",
         values: [ ],
@@ -45,12 +45,12 @@ class Diagnosis extends Component {
             <div>
                 <div className={style.container}>
                     <div className={style.box1}>
-                        <span className={style.header}>Diagnosis</span>
+                        <span className={style.header}>Test Advice</span>
                         <InfoOutlinedIcon
                             fontSize="small"
                             style={{ color: "#aaaaaa" }}
                         ></InfoOutlinedIcon>
-                        <span style={{width:"192px"}}></span>
+                        <span style={{width:'175px'}}></span>
                         <span className={style.template}>Load templates</span>
                     </div>
 
@@ -58,12 +58,12 @@ class Diagnosis extends Component {
                         {this.state.values.map((listItem) => (
                             <ListItem 
                             item={listItem.item}
-                            onCrossClicked={this.handleCross}
+                            onCrossClicked = {this.handleCross}
                             ></ListItem>
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point" onChange={this.handleChange}>
+                        <TextField style={{width:"400px"}} variant="outlined" label="Write Test Name" onChange={this.handleChange}>
                         </TextField>
                         <Button variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>
@@ -75,4 +75,4 @@ class Diagnosis extends Component {
     }
 }
 
-export default Diagnosis;
+export default TestAdvice;

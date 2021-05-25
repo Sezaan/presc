@@ -3,7 +3,7 @@
 
 .listItem {
     height: fit-content;
-    width: 500px;
+    width: 400px;
     margin-bottom: 10px;
     border-radius: 4px; 
     padding: 5px;
@@ -18,36 +18,14 @@
     border-radius: 4px;
   }
   
-  .close {
-    position: absolute;
-    right: 0px;
-    top: 3px;
-    width: 32px;
-    height: 32px;
-    opacity: 0.3;
-  }
-  .close:hover {
-    opacity: 1;
-  }
-  .close:before, .close:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #333;
-  }
-  .close:before {
-    transform: rotate(45deg);
-  }
-  .close:after {
-    transform: rotate(-45deg);
-  }
-  
   .container{
-    width: 500px;
-    
-}
+    width: 400px;
+  }
+
+  .containerTreatment{
+    width: 450px;
+    /*border: 2px solid rosybrown;*/
+  }
 
 .box1{
     display: flex;
@@ -58,7 +36,6 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 25px;
-
     color: #000000;
 }
 .infoicon{
@@ -77,11 +54,11 @@
     color: #444444;
 }
 .emptySpace{
-    width: 265px;
+    width: 170px;
 }
 .box2{
     height: fit-content;
-    width: 500px;
+    width: 400px;
     left: 0px;
     top: 0px;
     margin-top: 16px;
@@ -92,7 +69,7 @@
     border-radius: 4px;    
 }
 .box3{
-    width: 500px;
+    width: 400px;
     height: max-content;
     margin-top: 7px;
     background: #FFFFFF;
@@ -101,7 +78,7 @@
 
 
 .textbox{
-    width: 500px;
+    width: 400px;
     height: 40px;
     position: absolute;
     margin-top: 17px;
@@ -115,5 +92,28 @@
   margin-bottom: 5px;
   width: 480px;
   
+}
+
+table,th,td{
+  border: 1px solid #444444;
+  border-collapse: collapse;
+}
+
+.pageHeader{
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(3,1.5rem);
+  justify-content: center;
+  align-content: center;
+}
+
+.footer{
+    height: 8rem;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,1.5rem);
+    background: rgba(232, 82, 79, 0.1);
 }
   
