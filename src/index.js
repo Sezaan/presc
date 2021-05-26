@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
+import App from './App'
 import reportWebVitals from "./reportWebVitals";
-import LoginPage from './pages/LoginPage'
+import LoginPage from './pages/Prescription'
 
 
 ReactDOM.render(
-  <LoginPage></LoginPage>
+  <App></App>
   ,
 
   document.getElementById("root")
