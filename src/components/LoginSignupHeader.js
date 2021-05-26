@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import style from "../style.module.css";
-import Button from '@material-ui/core/Button'
+import {useHistory} from 'react-router-dom'
 
-class LoginSignupHeader extends Component {
-    state = {  }
-    render() { 
+;
+
+
+function LoginSignupHeader(props) {
+
+    let history = useHistory();
+    
+
+     function handleLoginButton(){
+        history.push('/login')
+    }
+
+    
         return ( 
             <header className={style.loginSignupHeader}>
                 
@@ -15,12 +25,12 @@ class LoginSignupHeader extends Component {
                     <button className={style.loginButton3}>Feature</button>
                     <button className={style.loginButton3}>Pricing</button>
                     <button className={style.loginButton3}>Contact</button>
-                    <button className={style.loginButton4}>Login</button>
+                    <button className={style.loginButton4} onClick={handleLoginButton}>Login</button>
                 </div>
                 
             </header>
          );
-    }
+    
 }
  
 export default LoginSignupHeader;
