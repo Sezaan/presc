@@ -9,7 +9,7 @@ class Buttonlist extends Component {
     return (
       <div>
         <div
-          style={{ display: "flex", justifyContent: "center", margin: "1rem" }}
+          style={{ display: "flex",flexWrap:"wrap", justifyContent: "center", margin: "1rem" }}
         >
           <Button
             id="create"

@@ -18,6 +18,7 @@ class Login extends Component {
           <TextField
             variant="outlined"
             label="Password"
+            type="password"
             size="small"
             style={{ width: "26rem", marginTop: "2.69rem" }}
           ></TextField>
