@@ -100,6 +100,7 @@ td {
 }
 
 .pageHeader {
+  width: auto;
   background-color: #ffffff;
   display: flex;
   box-shadow: 0px 0px 10px rgba(187, 187, 187, 0.25);
