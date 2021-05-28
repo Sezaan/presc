@@ -39,7 +39,7 @@ class PatientInfo extends Component {
           background: "#ffffff",
           boxShadow:"0px 0px 10px rgba(187, 187, 187, 0.25)",
           display: "grid",
-          gridTemplateColumns:"4fr,1fr",
+          gridTemplateColumns:"repeat(autofill,minmax(200px,1fr))",
           gap:"1rem"
         }}
       >
