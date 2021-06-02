@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import App from './App'
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import LoginPage from './pages/Prescription'
-
+import LoginPage from "./pages/Prescription";
+import MyContext, { MyContextProvider } from "./components/MyContext";
 
 ReactDOM.render(
-  <App></App>
-  ,
-
+  <MyContextProvider>
+    <App></App>
+  </MyContextProvider>,
   document.getElementById("root")
 );
 

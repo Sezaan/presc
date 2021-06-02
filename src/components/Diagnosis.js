@@ -13,7 +13,6 @@ class Diagnosis extends Component {
     };
 
     handleChange = (event) =>{
-        console.log(event.target.value);
         var val = event.target.value;
         this.setState({item: val});
     }
@@ -21,18 +20,20 @@ class Diagnosis extends Component {
     handleAdd=()=>{
         var values = this.state.values;
         var newValue = this.state.item;
-        console.log("newValue is ",newValue);
         if(newValue!=="")
             {
                 newValue = {item : newValue};
                 values.push(newValue);
+            
             }
-
         this.setState(
             {
                 values: values,
             }
+            
         );
+        console.log(this.state.values);
+        this.props.onChangeDiagnosis(this.state.values);
     }
 
     handleCross = item =>{

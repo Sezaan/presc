@@ -6,6 +6,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Button, duration } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import MedicineList from "./MedicineList";
+import Autocomplete from '@material-ui/lab/Autocomplete'
 
 class Treatment extends Component {
   state = {
@@ -15,6 +16,29 @@ class Treatment extends Component {
     direction: "",
     additionalComments: "",
     value: [ ],
+    autocompleteList: [],
+  };
+
+  async componentDidMount() {
+    const response = await fetch(
+      "https://calm-plains-47385.herokuapp.com/medicine/"
+    );
+    const result = await response.json();
+    const data = result.data;
+    let medicine = [];
+    data.map((item) => {
+      let newVal = item.brand_name;
+      newVal = { title: newVal };
+      medicine.push(newVal);
+    });
+    this.setState({ autocompleteList: medicine });
+    console.log(this.state.autocompleteList);
+  }
+
+  handleKey = (event) => {
+    if (event.code === "Enter" && event.target.value !== "") {
+      this.handleChange(event);
+    }
   };
 
   handleCross = (item) => {
@@ -58,13 +82,16 @@ class Treatment extends Component {
             direction: newDirection,
             additionalComments: newAdditionalComments,};
             values.push(newValue);
-        }
+        
 
     this.setState(
         {
-            values: values,
+            value: values,
         }
     );
+        this.props.onChangeTreatments(this.state.value);
+      }
+
   }
 
   render() {
@@ -81,12 +108,22 @@ class Treatment extends Component {
             <span className={style.template}>Load templates</span>
           </div>
           <div style={{ marginTop: "18px" }}>
-            <TextField
+          <Autocomplete
               id="medicine"
-              label="Medicine Name"
-              variant="outlined"
-              style={{ width: "450px" }}
-              onChange={this.handleChange}
+              freeSolo
+              options={this.state.autocompleteList}
+              getOptionLabel={(option) => option.title}
+              style={{ width: 450 }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Write Medicine"
+                  variant="outlined"
+                  onKeyDown={this.handleKey}
+                  onChange={this.handleChange}
+                  onSelect={this.handleChange}
+                />
+              )}
             />
             <div
               style={{

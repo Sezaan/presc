@@ -26,13 +26,15 @@ class Advice extends Component {
             {
                 newValue = {item : newValue};
                 values.push(newValue);
-            }
+            
 
         this.setState(
             {
                 values: values,
             }
         );
+        this.props.onChangeAdvices(this.state.values)
+            }
     }
 
     handleCross = item =>{

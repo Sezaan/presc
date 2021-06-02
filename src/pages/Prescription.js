@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 class Prescription extends Component {
     state = {  }
+
     render() { 
         return ( 
             <div >

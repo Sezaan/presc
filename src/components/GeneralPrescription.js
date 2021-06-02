@@ -1,8 +1,8 @@
 import { Repeat } from "@material-ui/icons";
-import React, { Component } from "react";
+import React, { Component, useContext, useState } from "react";
 import Advice from "./Advice";
 import Diagnosis from "./Diagnosis";
-import PatientInfo from "./PatientInfo";
+import Preview from "./Preview";
 import Treatmeant from "./Treatment";
 import TestAdvice from "./TestAdvice";
 import ChiefComplaints from "./ChiefComplaints";
@@ -12,12 +12,70 @@ import DescriptionIcon from "@material-ui/icons/DescriptionOutlined";
 import SaveIcon from "@material-ui/icons/SaveOutlined";
 import SystemUpdateIcon from "@material-ui/icons/SystemUpdateOutlined";
 import FileCopyIcon from "@material-ui/icons/FileCopyOutlined";
+import MyContext from "./MyContext";
+import { useHistory } from "react-router";
 
-class GeneralPrescription extends Component {
-  state = {};
-  render() {
+function GeneralPrescription(props) {
+  
+    const [diagnosisL,setDiagnosis] = useState();
+    const [complaintsL,setComplaint] = useState();
+    const [testsL,setTests] = useState();
+    const [medicinesL,setMedicine] = useState();
+    const [treatmentsL,setTreatment] = useState();
+    const [advicesL,setAdvice] = useState();
+    const {value, setValue} = useContext(MyContext);
+    const history = useHistory();
+  
+
+  function saveDiagnosis(values) {
+    setDiagnosis(values)
+    
+  }
+
+  function saveComplaints (values){
+    setComplaint(values)
+  };
+
+  function saveTests(values) {
+    setTests(values)
+  };
+
+  function saveMedicines(values) {
+    setMedicine(values)
+  };
+
+  function saveTreatments(values) {
+    setTreatment(values)
+  };
+
+  function saveAdvices(values) {
+   setAdvice(values)
+  };
+
+  function handlePreview(event){
+    let info = {
+      diagnosis: diagnosisL,
+      complaints: complaintsL,
+      tests: testsL,
+      medicines: medicinesL,
+      treatments: treatmentsL,
+      advices: advicesL,}
+    ;
+    setValue(info);
+    history.push('./preview')
+    //console.log("this is context :"+ value[diagnosis]);
+  };
+
+ 
     return (
-      <div style={{borderRadius:"1px",margin:"1rem", background:"#FFFFFF",width:"1350px"}}>
+      <div
+        style={{
+          borderRadius: "1px",
+          margin: "1rem",
+          background: "#FFFFFF",
+          width: "1350px",
+        }}
+      >
         <div
           style={{
             width: "1300px",
@@ -61,6 +119,7 @@ class GeneralPrescription extends Component {
             </Button>
             <Button
               variant="outlined"
+              onClickCapture={handlePreview}
               size="medium"
               style={{
                 margin: "2px",
@@ -115,29 +174,35 @@ class GeneralPrescription extends Component {
           <div
             style={{ gridColumn: "1/5", gridRow: "1/2", width: "fit-content" }}
           >
-            <Diagnosis></Diagnosis>
+            <Diagnosis onChangeDiagnosis={saveDiagnosis}></Diagnosis>
           </div>
           <div style={{ gridColumn: "1/2", gridRow: "2/3" }}>
-            <ChiefComplaints></ChiefComplaints>
+            <ChiefComplaints
+              onChangeComplaints={saveComplaints}
+            ></ChiefComplaints>
           </div>
           <div style={{ gridColumn: "1/2", gridRow: "3/4" }}>
-            <TestAdvice></TestAdvice>
+            <TestAdvice onChangeTests={saveTests}></TestAdvice>
           </div>
           <div style={{ gridColumn: "1/2", gridRow: "4/5" }}>
-            <MedicineHistory></MedicineHistory>
+            <MedicineHistory
+              onChangeMedicines={saveMedicines}
+            ></MedicineHistory>
           </div>
           <div
             style={{ gridColumn: "2/4", gridRow: "1/5", justifySelf: "start" }}
           >
-            <Treatmeant></Treatmeant>
+            <Treatmeant onChangeTreatments={saveTreatments}></Treatmeant>
           </div>
           <div style={{ gridColumn: "4/5", gridRow: "1/5" }}>
-            <Advice></Advice>
+            <Advice onChangeAdvices={saveAdvices}></Advice>
           </div>
         </div>
       </div>
     );
   }
-}
+
+
+GeneralPrescription.contextType = MyContext;
 
 export default GeneralPrescription;

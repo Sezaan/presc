@@ -3,14 +3,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
 } from "react-router-dom";
 import SignupPage from './pages/SignupPage'
 import LoginPage from './pages/LoginPage'
 import ForgotPassworkPage from './pages/ForgotPassworkPage'
 import PasswordResetPage from './pages/PasswordResetPage'
 import Prescription from './pages/Prescription'
+import Preview from './components/Preview';
+
+
 
 function App() {
+
   return (
     <Router>
       <div >
@@ -20,6 +25,7 @@ function App() {
           <Route exact path='/signup' component={SignupPage}></Route>
           <Route exact path='/forgotpass' component={ForgotPassworkPage}></Route>
           <Route exact path='/resetpass' component={PasswordResetPage}></Route>
+          <Route exact path='/preview' component={Preview}></Route>
         </Switch>
       </div>
     </Router>

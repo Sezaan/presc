@@ -26,13 +26,15 @@ class ChiefComplaints extends Component {
             {
                 newValue = {item : newValue};
                 values.push(newValue);
-            }
+            
 
         this.setState(
             {
                 values: values,
             }
         );
+            this.props.onChangeComplaints(this.state.values)
+            }
     }
 
     handleCross = item =>{
