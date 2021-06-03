@@ -1,4 +1,5 @@
 import './App.css';
+<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,9 @@ import Preview from './components/Preview';
 
 
 
+=======
+//
+>>>>>>> c0bb79e17560d582a3460ef0572397a954622c7d
 function App() {
 
   return (
