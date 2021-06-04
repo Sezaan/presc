@@ -14,22 +14,6 @@ class MedicineHistory extends Component {
     autocompleteList: [],
   };
 
-  async componentDidMount() {
-    const response = await fetch(
-      "https://calm-plains-47385.herokuapp.com/medicine/"
-    );
-    const result = await response.json();
-    const data = result.data;
-    let medicine = [];
-    data.map((item) => {
-      let newVal = item.brand_name;
-      newVal = { title: newVal };
-      medicine.push(newVal);
-    });
-    this.setState({ autocompleteList: medicine });
-    console.log(this.state.autocompleteList);
-  }
-
   handleKey = (event) => {
     if (event.code === "Enter" && event.target.value !== "") {
       let val = event.target.value;
@@ -39,10 +23,27 @@ class MedicineHistory extends Component {
     }
   };
 
-  handleChange = (event) => {
+  handleChange = async (event) => {
     let val = event.target.value;
+    event.target.value = ""
     this.setState({ item: val });
-    event.target.value='';
+    var url = `https://calm-plains-47385.herokuapp.com/medicine/?filter=${val}`;
+    console.log(url)
+    if (val === "") {
+      url = "https://calm-plains-47385.herokuapp.com/medicine/";
+    }
+    fetch(url)
+      .then((response) => response.json())
+      .then((result) => {
+        let medicine = [];
+        console.log(result.data)
+        result.data.map((item) => {
+          let newVal = item.brand_name;
+          newVal = { title: newVal };
+          medicine.push(newVal);
+        });
+        this.setState({ autocompleteList: medicine });
+      });
   };
 
   handleAdd = () => {

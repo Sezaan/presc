@@ -6,7 +6,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Button, duration } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import MedicineList from "./MedicineList";
-import Autocomplete from '@material-ui/lab/Autocomplete'
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 class Treatment extends Component {
   state = {
@@ -15,25 +15,9 @@ class Treatment extends Component {
     duration: "",
     direction: "",
     additionalComments: "",
-    value: [ ],
+    value: [],
     autocompleteList: [],
   };
-
-  async componentDidMount() {
-    const response = await fetch(
-      "https://calm-plains-47385.herokuapp.com/medicine/"
-    );
-    const result = await response.json();
-    const data = result.data;
-    let medicine = [];
-    data.map((item) => {
-      let newVal = item.brand_name;
-      newVal = { title: newVal };
-      medicine.push(newVal);
-    });
-    this.setState({ autocompleteList: medicine });
-    console.log(this.state.autocompleteList);
-  }
 
   handleKey = (event) => {
     if (event.code === "Enter" && event.target.value !== "") {
@@ -52,19 +36,40 @@ class Treatment extends Component {
 
     if (key === "medicine") {
       this.setState({ medicine: value });
-    } else if (key === "dosage") {
-      this.setState({ dosage: value });
-    } else if (key === "duration") {
-      this.setState({ duration: value });
-    } else if (key === "direction") {
-      this.setState({ direction: value });
-    } else if (key === "additionalComments") {
-      this.setState({ additionalComments: value });
-    }
-    console.log(this.state);
-  };
 
-  handleAdd =()=>{
+      var url = `https://calm-plains-47385.herokuapp.com/medicine/?filter=${value}`;
+      console.log(url);
+      if (value === "") 
+        url = "https://calm-plains-47385.herokuapp.com/medicine/";
+      
+        fetch(url)
+          .then((response) => response.json())
+          .then((result) => {
+            let medicine = [];
+            console.log(result.data);
+            result.data.map((item) => {
+              let newVal = item.brand_name;
+              newVal = { title: newVal };
+              medicine.push(newVal);
+            });
+            this.setState({ autocompleteList: medicine });
+          });
+      } else if (key === "dosage") {
+        this.setState({ dosage: value });
+      } else if (key === "duration") {
+        this.setState({ duration: value });
+      } else if (key === "direction") {
+        this.setState({ direction: value });
+      } else if (key === "additionalComments") {
+        this.setState({ additionalComments: value });
+      }
+      console.log(this.state);
+    };
+
+   
+  
+
+  handleAdd = () => {
     var values = this.state.value;
 
     var newMedicine = this.state.medicine;
@@ -73,26 +78,23 @@ class Treatment extends Component {
     var newDirection = this.state.direction;
     var newAdditionalComments = this.state.additionalComments;
 
-    console.log("newValue is ",newValue);
-    if(newMedicine!=="")
-        {
-            var newValue = {medicine: newMedicine,
-            dosage: newDosage,
-            duration: newDuration,
-            direction: newDirection,
-            additionalComments: newAdditionalComments,};
-            values.push(newValue);
-        
+    console.log("newValue is ", newValue);
+    if (newMedicine !== "") {
+      var newValue = {
+        medicine: newMedicine,
+        dosage: newDosage,
+        duration: newDuration,
+        direction: newDirection,
+        additionalComments: newAdditionalComments,
+      };
+      values.push(newValue);
 
-    this.setState(
-        {
-            value: values,
-        }
-    );
-        this.props.onChangeTreatments(this.state.value);
-      }
-
-  }
+      this.setState({
+        value: values,
+      });
+      this.props.onChangeTreatments(this.state.value);
+    }
+  };
 
   render() {
     return (
@@ -108,7 +110,7 @@ class Treatment extends Component {
             <span className={style.template}>Load templates</span>
           </div>
           <div style={{ marginTop: "18px" }}>
-          <Autocomplete
+            <Autocomplete
               id="medicine"
               freeSolo
               options={this.state.autocompleteList}

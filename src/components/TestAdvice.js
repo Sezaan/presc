@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import { Button } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
-import Autocomplete from '@material-ui/lab/Autocomplete'
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 class TestAdvice extends Component {
   state = {
@@ -13,22 +13,6 @@ class TestAdvice extends Component {
     values: [],
     autocompleteList: [],
   };
-
-  async componentDidMount() {
-    const response = await fetch(
-      "https://calm-plains-47385.herokuapp.com/test/get_test"
-    );
-    const result = await response.json();
-    const data = result.data;
-    let medicine = [];
-    data.map((item) => {
-      let newVal = item.name;
-      newVal = { title: newVal };
-      medicine.push(newVal);
-    });
-    this.setState({ autocompleteList: medicine });
-    console.log(this.state.autocompleteList);
-  }
 
   handleKey = (event) => {
     if (event.code === "Enter" && event.target.value !== "") {
@@ -40,9 +24,24 @@ class TestAdvice extends Component {
   };
 
   handleChange = (event) => {
-    console.log(event.target.value);
     var val = event.target.value;
     this.setState({ item: val });
+    var url = `https://calm-plains-47385.herokuapp.com/test/get_test?filter=${val}`;
+
+    if (val === "") {
+      url = "https://calm-plains-47385.herokuapp.com/test/get_test";
+    }
+    fetch(url)
+      .then((response) => response.json())
+      .then((result) => {
+        let medicine = [];
+        result.data.map((item) => {
+          let newVal = item.name;
+          newVal = { title: newVal };
+          medicine.push(newVal);
+        });
+        this.setState({ autocompleteList: medicine });
+      });
   };
 
   handleAdd = () => {
@@ -52,13 +51,12 @@ class TestAdvice extends Component {
     if (newValue !== "") {
       newValue = { item: newValue };
       values.push(newValue);
-    
 
-    this.setState({
-      values: values,
-    });
-    this.props.onChangeTests(this.state.values)
-}
+      this.setState({
+        values: values,
+      });
+      this.props.onChangeTests(this.state.values);
+    }
   };
 
   handleCross = (item) => {
