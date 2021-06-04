@@ -3,7 +3,7 @@ import ListItem from "./ListItem";
 import style from "../style.module.css";
 import TextField from '@material-ui/core/TextField'
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import { IconButton,Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import AddIcon from '@material-ui/icons/Add';
 
 class ChiefComplaints extends Component {
@@ -19,6 +19,7 @@ class ChiefComplaints extends Component {
             console.log({titel:element})
             values.push({item:element})
             this.setState({values})
+            this.props.onChangeComplaints(this.state.values)
         }
     }
 
@@ -64,6 +65,7 @@ class ChiefComplaints extends Component {
                     </div>
 
                     <div className={style.box2}>
+                        {this.props.onChangeComplaints(this.state.values)}
                         {this.state.values.map((listItem) => (
                             <ListItem 
                             item={listItem.item}

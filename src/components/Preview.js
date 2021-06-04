@@ -153,21 +153,18 @@ class Preview extends Component {
                 <p style={{fontWeight:"bold",fontSize:"20px"}}>Treatment</p>
                 <ul>
                 {value.treatments.map(
-                    listItem => <li><table style={{textAlign:"start",padding:"0 1rem",width:"40rem",height:"10rem",border:"1px solid white",marginBottom:"1rem"}}>
-                        
-                        <tr>
-                            <td colSpan="3">{listItem.medicine}</td>
-                        </tr>
-                        <tr>
-                            <td>{listItem.dosage}</td>
-                            <td>{listItem.direction}</td>
-                            <td>{listItem.duration}</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="3">{listItem.additionalComments}</td>
-                        </tr>
-                        
-                        </table></li>
+                    listItem => 
+                    <li>
+                      <div>
+                        <p>{listItem.medicine}</p>
+                        <div style={{marginBottom:"10px"}}>
+                          <span>{listItem.dosage}&emsp;</span>
+                          <span>{listItem.duration}&emsp;</span>
+                          <span>{listItem.direction}&emsp;</span>
+                        </div>
+                        <p>{listItem.additionalComments}</p>
+                      </div>
+                    </li>
                 )}
                 </ul>
             </div>

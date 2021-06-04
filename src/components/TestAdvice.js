@@ -47,6 +47,7 @@ class TestAdvice extends Component {
   handleAdd = () => {
     var values = this.state.values;
     var newValue = this.state.item;
+    document.getElementById('test').value = ''
     console.log("newValue is ", newValue);
     if (newValue !== "") {
       newValue = { item: newValue };
@@ -79,6 +80,7 @@ class TestAdvice extends Component {
           </div>
 
           <div className={style.box2}>
+            {this.props.onChangeTests(this.state.values)}
             {this.state.values.map((listItem) => (
               <ListItem
                 item={listItem.item}
@@ -88,7 +90,7 @@ class TestAdvice extends Component {
           </div>
           <div className={style.box3}>
             <Autocomplete
-              id="combo-box-demo"
+              id="test"
               freeSolo
               options={this.state.autocompleteList}
               getOptionLabel={(option) => option.title}

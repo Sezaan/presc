@@ -47,6 +47,7 @@ class MedicineHistory extends Component {
   };
 
   handleAdd = () => {
+    document.getElementById('medicine').value = ''
     var values = this.state.values;
     var newValue = this.state.item;
     console.log("newValue is ", newValue);
@@ -81,6 +82,7 @@ class MedicineHistory extends Component {
           </div>
 
           <div className={style.box2}>
+            {this.props.onChangeMedicines(this.state.values)}
             {this.state.values.map((listItem) => (
               <ListItem
                 item={listItem.item}
@@ -90,7 +92,7 @@ class MedicineHistory extends Component {
           </div>
           <div className={style.box3}>
             <Autocomplete
-              id="combo-box-demo"
+              id="medicne"
               freeSolo
               options={this.state.autocompleteList}
               getOptionLabel={(option) => option.title}

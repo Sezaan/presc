@@ -16,9 +16,9 @@ class Advice extends Component {
         if(event.code === "Enter" && element !==""){
             document.getElementById('advice').value = null
             let values = this.state.values;
-            console.log({titel:element})
             values.push({item:element})
             this.setState({values})
+            this.props.onChangeAdvices(this.state.values)
         }
     }
 
@@ -27,7 +27,6 @@ class Advice extends Component {
         document.getElementById('advice').value = null
         var values = this.state.values;
         var newValue = element;
-        console.log("newValue is ",newValue);
         if(newValue!=="")
             {
                 newValue = {item : newValue};
@@ -44,8 +43,8 @@ class Advice extends Component {
     }
 
     handleCross = item =>{
-        var values = this.state.values.filter(c => c.item!== item );
-        this.setState({values});
+        const items = this.state.values.filter(c => c.item!== item );
+        this.setState({values:items});
     }
     render() {
         return (
@@ -62,6 +61,7 @@ class Advice extends Component {
                     </div>
 
                     <div className={style.box2}>
+                        {this.props.onChangeAdvices(this.state.values)}
                         {this.state.values.map((listItem) => (
                             <ListItem 
                             item={listItem.item}

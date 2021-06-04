@@ -18,6 +18,7 @@ class Diagnosis extends Component {
             let values = this.state.values;
             values.push({item:element})
             this.setState({values})
+            this.props.onChangeDiagnosis(this.state.values)
         }
     }
 
@@ -61,6 +62,7 @@ class Diagnosis extends Component {
                     </div>
 
                     <div className={style.box2}>
+                        {this.props.onChangeDiagnosis(this.state.values)}
                         {this.state.values.map((listItem) => (
                             <ListItem 
                             item={listItem.item}

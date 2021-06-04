@@ -1,4 +1,4 @@
-import { Repeat } from "@material-ui/icons";
+import { Repeat, SettingsPower } from "@material-ui/icons";
 import React, { Component, useContext, useState } from "react";
 import Advice from "./Advice";
 import Diagnosis from "./Diagnosis";
@@ -13,7 +13,8 @@ import SaveIcon from "@material-ui/icons/SaveOutlined";
 import SystemUpdateIcon from "@material-ui/icons/SystemUpdateOutlined";
 import FileCopyIcon from "@material-ui/icons/FileCopyOutlined";
 import MyContext from "./MyContext";
-import { useHistory } from "react-router";
+import {Modal} from 'semantic-ui-react'
+
 
 function GeneralPrescription(props) {
   
@@ -24,24 +25,26 @@ function GeneralPrescription(props) {
     const [treatmentsL,setTreatment] = useState();
     const [advicesL,setAdvice] = useState();
     const {value, setValue} = useContext(MyContext);
-    const history = useHistory();
-  
+    const [open, setOpen] = useState(false)
 
   function saveDiagnosis(values) {
     setDiagnosis(values)
-    
-  }
+
+  };
 
   function saveComplaints (values){
     setComplaint(values)
+
   };
 
   function saveTests(values) {
     setTests(values)
+
   };
 
   function saveMedicines(values) {
     setMedicine(values)
+
   };
 
   function saveTreatments(values) {
@@ -62,8 +65,9 @@ function GeneralPrescription(props) {
       advices: advicesL,}
     ;
     setValue(info);
-    history.push('./preview')
-    //console.log("this is context :"+ value[diagnosis]);
+    setOpen(true);
+
+
   };
 
  
@@ -158,6 +162,25 @@ function GeneralPrescription(props) {
               Print
             </Button>
           </div>
+          <Modal
+          onOpen={()=>setOpen(true)}
+          onClose={ ()=> setOpen(false)}
+          open={open}
+          size="fullscreen"
+          >
+            <Modal.Header>
+              <div style={{display:"flex", justifyContent:"space-between"}}>
+              <p> Prescription&nbsp;Preview</p>
+              <Button onClick={ ()=> setOpen(false)} style={{color:"red"}}>Close</Button>
+              </div>
+              
+            </Modal.Header>
+            <Modal.Content>
+              <Modal.Description>
+                <Preview/>
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
         </div>
         <div
           style={{

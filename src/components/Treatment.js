@@ -68,13 +68,19 @@ class Treatment extends Component {
   
 
   handleAdd = () => {
-    var values = this.state.value;
 
+    var values = this.state.value;
     var newMedicine = this.state.medicine;
     var newDosage = this.state.dosage;
     var newDuration = this.state.duration;
     var newDirection = this.state.direction;
     var newAdditionalComments = this.state.additionalComments;
+
+    document.getElementById('medicine').value = ''
+    document.getElementById('dosage').value = ''
+    document.getElementById('duration').value = ''
+    document.getElementById('direction').value = ''
+    document.getElementById('additionalComments').value = ''
 
     console.log("newValue is ", newValue);
     if (newMedicine !== "") {
@@ -198,6 +204,7 @@ class Treatment extends Component {
               <span style={{ width: "100px" }}></span>
             </div>
             <div style={{ marginTop: "18px" }}>
+              {this.props.onChangeTreatments(this.state.value)}
               {this.state.value.map((item) => (
                 <MedicineList
                   key={item.id}
