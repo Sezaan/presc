@@ -8,19 +8,25 @@ import AddIcon from '@material-ui/icons/Add';
 
 class Advice extends Component {
     state = {
-        item : "",
         values: [ ],
     };
 
-    handleChange = (event) =>{
-        console.log(event.target.value);
-        var val = event.target.value;
-        this.setState({item: val});
+    handleEnter=(event)=>{
+        const element = document.getElementById('advice').value
+        if(event.code === "Enter" && element !==""){
+            document.getElementById('advice').value = null
+            let values = this.state.values;
+            console.log({titel:element})
+            values.push({item:element})
+            this.setState({values})
+        }
     }
 
     handleAdd=()=>{
+        const element = document.getElementById("advice").value
+        document.getElementById('advice').value = null
         var values = this.state.values;
-        var newValue = this.state.item;
+        var newValue = element;
         console.log("newValue is ",newValue);
         if(newValue!=="")
             {
@@ -65,7 +71,7 @@ class Advice extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"400px"}} variant="outlined" label="Write Advice Point" onChange={this.handleChange}>
+                        <TextField id="advice" style={{width:"400px"}} variant="outlined" label="Write Advice Point" onKeyDownCapture={this.handleEnter} onChange={this.handleChange}>
                         </TextField>
                         <Button type="submit" variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>

@@ -8,32 +8,37 @@ import AddIcon from '@material-ui/icons/Add';
 
 class Diagnosis extends Component {
     state = {
-        item:"",
         values: [ ],
     };
 
-    handleChange = (event) =>{
-        var val = event.target.value;
-        this.setState({item: val});
+    handleEnter=(event)=>{
+        const element = document.getElementById('diagnosis').value
+        if(event.code === "Enter" && element !==""){
+            document.getElementById('diagnosis').value = null
+            let values = this.state.values;
+            values.push({item:element})
+            this.setState({values})
+        }
     }
 
     handleAdd=()=>{
+        const element = document.getElementById("diagnosis").value
+        document.getElementById('diagnosis').value = null
         var values = this.state.values;
-        var newValue = this.state.item;
+        var newValue = element;
         if(newValue!=="")
             {
                 newValue = {item : newValue};
                 values.push(newValue);
             
-            }
+
         this.setState(
             {
                 values: values,
             }
-            
         );
-        console.log(this.state.values);
-        this.props.onChangeDiagnosis(this.state.values);
+        this.props.onChangeDiagnosis(this.state.values)
+            }
     }
 
     handleCross = item =>{
@@ -64,7 +69,7 @@ class Diagnosis extends Component {
                         ))}
                     </div>
                     <div className={style.box3}>
-                        <TextField style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point" onChange={this.handleChange}>
+                        <TextField id ="diagnosis" style={{width:"400px"}} variant="outlined" label="Write Diagnosis Point" onKeyDownCapture={this.handleEnter} onChange={this.handleChange}>
                         </TextField>
                         <Button variant = "outlined" size="small" onClick={this.handleAdd}>
                             <AddIcon fontSize="large" style={{color:"#888888"}}/>
