@@ -7,7 +7,7 @@ class Preview extends Component {
     let {value,setValue} = this.context;
     {console.log(value)}
     return (
-      <div style={{ width: "1240px", height: "1754px", position: "relative" }}>
+      <div style={{ width: "1240px", height: "1754px", position: "relative",margin:"auto" }}>
         <div
           style={{
             padding: "0.5rem 1rem",
@@ -154,7 +154,7 @@ class Preview extends Component {
                 <ul>
                 {value.treatments.map(
                     listItem => 
-                    <li>
+                    <li style={{marginBottom:"2rem"}}>
                       <div>
                         <p>{listItem.medicine}</p>
                         <div style={{marginBottom:"10px"}}>
