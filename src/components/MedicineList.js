@@ -13,7 +13,7 @@ class MedicineList extends Component {
                         <td colSpan={3} >
                             <div style={{display:"flex",justifyContent:"space-between"}}>
                                 <span style={{marginLeft:"23px",marginTop:"10px",fontWeight:"bold"}}>{this.props.medicine}</span>
-                                <IconButton size="small" onClick={() => this.props.onCrossClicked(this.props.medicine)}><CloseOutlinedIcon fontSize="small" color="secondary"/></IconButton>
+                                <IconButton size="small" onClick={() => this.props.onCrossClicked(this.props.id)}><CloseOutlinedIcon fontSize="small" color="secondary"/></IconButton>
                             </div>
                         </td>
                     </tr>

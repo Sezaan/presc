@@ -9,6 +9,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 class TestAdvice extends Component {
   state = {
+    counter:1,
     item: "",
     values: [],
     autocompleteList: [],
@@ -50,7 +51,8 @@ class TestAdvice extends Component {
     document.getElementById('test').value = ''
     console.log("newValue is ", newValue);
     if (newValue !== "") {
-      newValue = { item: newValue };
+      newValue = { id:this.state.counter,item: newValue };
+      this.setState({counter:this.state.counter+1});
       values.push(newValue);
 
       this.setState({
@@ -60,8 +62,8 @@ class TestAdvice extends Component {
     }
   };
 
-  handleCross = (item) => {
-    var values = this.state.values.filter((c) => c.item !== item);
+  handleCross = (id) => {
+    var values = this.state.values.filter((c) => c.id !== id);
     this.setState({ values });
   };
 
@@ -83,6 +85,8 @@ class TestAdvice extends Component {
             {this.props.onChangeTests(this.state.values)}
             {this.state.values.map((listItem) => (
               <ListItem
+                key={listItem.id}
+                id={listItem.id}
                 item={listItem.item}
                 onCrossClicked={this.handleCross}
               ></ListItem>

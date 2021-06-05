@@ -9,6 +9,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 class MedicineHistory extends Component {
   state = {
+    counter: 1,
     item: "",
     values: [],
     autocompleteList: [],
@@ -17,18 +18,19 @@ class MedicineHistory extends Component {
   handleKey = (event) => {
     if (event.code === "Enter" && event.target.value !== "") {
       let val = event.target.value;
-      this.setState({ item:  val});
+      this.setState({ id: this.state.counter, item: val });
+      this.setState({ counter: this.state.counter + 1 });
       this.handleAdd();
-      event.target.value='';
+      event.target.value = "";
     }
   };
 
   handleChange = async (event) => {
     let val = event.target.value;
-    event.target.value = ""
+    event.target.value = "";
     this.setState({ item: val });
     var url = `https://calm-plains-47385.herokuapp.com/medicine/?filter=${val}`;
-    console.log(url)
+    console.log(url);
     if (val === "") {
       url = "https://calm-plains-47385.herokuapp.com/medicine/";
     }
@@ -36,7 +38,7 @@ class MedicineHistory extends Component {
       .then((response) => response.json())
       .then((result) => {
         let medicine = [];
-        console.log(result.data)
+        console.log(result.data);
         result.data.map((item) => {
           let newVal = item.brand_name;
           newVal = { title: newVal };
@@ -47,24 +49,24 @@ class MedicineHistory extends Component {
   };
 
   handleAdd = () => {
-    document.getElementById('medicine').value = ''
+    document.getElementById("medicine").value = "";
     var values = this.state.values;
     var newValue = this.state.item;
     console.log("newValue is ", newValue);
     if (newValue !== "") {
-      newValue = { item: newValue };
+      newValue = { id: this.state.counter, item: newValue };
+      this.setState({ counter: this.state.counter + 1 });
       values.push(newValue);
-    
 
-    this.setState({
-      values: values,
-    });
-    this.props.onChangeMedicines(this.state.values)
-}
+      this.setState({
+        values: values,
+      });
+      this.props.onChangeMedicines(this.state.values);
+    }
   };
 
-  handleCross = (item) => {
-    var values = this.state.values.filter((c) => c.item !== item);
+  handleCross = (id) => {
+    var values = this.state.values.filter((c) => c.id !== id);
     this.setState({ values });
   };
   render() {
@@ -85,6 +87,8 @@ class MedicineHistory extends Component {
             {this.props.onChangeMedicines(this.state.values)}
             {this.state.values.map((listItem) => (
               <ListItem
+                id={listItem.id}
+                key={listItem.id}
                 item={listItem.item}
                 onCrossClicked={this.handleCross}
               ></ListItem>

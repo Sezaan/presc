@@ -13,7 +13,7 @@ class ListItem extends Component {
         <p>{this.props.item}</p>
         <IconButton
           size="small"
-          onClick={() => this.props.onCrossClicked(this.props.item)}
+          onClick={() => this.props.onCrossClicked(this.props.id)}
         >
           <CloseOutlinedIcon fontSize="large" />
         </IconButton>
