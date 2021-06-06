@@ -102,7 +102,7 @@ class TestAdvice extends Component {
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="Write Medicine"
+                  label="Write Test Name"
                   variant="outlined"
                   onKeyDown={this.handleKey}
                   onChange={this.handleChange}
