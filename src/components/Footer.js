@@ -5,7 +5,7 @@ class Footer extends Component {
     state = {  }
     render() { 
         return ( 
-            <div className={style.footer}>
+            <div className={style.footer} >
 
             </div>
          );

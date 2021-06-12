@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import LoginSignupHeader from '../components/LoginSignupHeader';
 import style from "../style.module.css";
 import ButtonList from '../components/ButtonList'
 import Header from '../components/Header'
-import ArchiveSearch from '../components/ArchiveSearch'
+import PatientHistory from '../components/PatientHistory'
 import Footer from '../components/Footer';
 
 
@@ -16,7 +15,7 @@ class ArchivePage extends Component {
                 <Header/>
                 <div className={style.componentPlacer} style={{margin:"auto",padding:"0rem",}}>
                     <ButtonList/>
-                    <ArchiveSearch/>
+                    <PatientHistory/>
                 </div>
                 <Footer />
             </div>

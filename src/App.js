@@ -11,6 +11,9 @@ import ForgotPassworkPage from './pages/ForgotPassworkPage'
 import PasswordResetPage from './pages/PasswordResetPage'
 import Prescription from './pages/Prescription'
 import Preview from './components/Preview';
+import ArchivePage from './pages/ArchivePage'
+import PatientPage from './pages/PatientPage'
+import PatientHistoryPage from './pages/PatientHistoryPage'
 
 
 
@@ -26,6 +29,9 @@ function App() {
           <Route exact path='/forgotpass' component={ForgotPassworkPage}></Route>
           <Route exact path='/resetpass' component={PasswordResetPage}></Route>
           <Route exact path='/preview' component={Preview}></Route>
+          <Route exact path='/archive' component={ArchivePage}></Route>
+          <Route exact path='/patient' component={PatientPage}></Route>
+          <Route exact path='/patienthistory' component={PatientHistoryPage}></Route>
         </Switch>
       </div>
     </Router>

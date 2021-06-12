@@ -24,7 +24,9 @@
 }
 
 .containerTreatment {
-  width: 450px;
+
+  display: flex;
+  flex-direction: column;
   /*border: 2px solid rosybrown;*/
 }
 
@@ -117,6 +119,7 @@ td {
   height: 8rem;
   width: auto;
   display: grid;
+  margin-top: 1rem;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, 1.5rem);
   background: rgba(232, 82, 79, 0.1);
@@ -253,7 +256,7 @@ td {
 .pageContainer{
   display:flex;
   flex-direction:column;
-  background-color: #E5E5E5;
+  background-color: #FBFBFB;
 }
 .componentPlacer{
   align-self: center;

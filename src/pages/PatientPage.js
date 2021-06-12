@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import LoginSignupHeader from '../components/LoginSignupHeader';
 import style from "../style.module.css";
 import ButtonList from '../components/ButtonList'
 import Header from '../components/Header'
-import ArchiveSearch from '../components/ArchiveSearch'
+import PatientSearch from '../components/PatientSearch'
 import Footer from '../components/Footer';
 
 
 
-class ArchivePage extends Component {
+class PatientPage extends Component {
     state = {  }
     render() { 
         return ( 
@@ -16,7 +15,7 @@ class ArchivePage extends Component {
                 <Header/>
                 <div className={style.componentPlacer} style={{margin:"auto",padding:"0rem",}}>
                     <ButtonList/>
-                    <ArchiveSearch/>
+                    <PatientSearch/>
                 </div>
                 <Footer />
             </div>
@@ -24,4 +23,4 @@ class ArchivePage extends Component {
     }
 }
  
-export default ArchivePage ;
+export default PatientPage ;

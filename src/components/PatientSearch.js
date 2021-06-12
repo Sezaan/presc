@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import style from "../style.module.css";
-import { flushSync } from "react-dom";
-import PatientList from "./PatientBlock";
+import PatientBlock from "./PatientBlock";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
-class ArchiveSearch extends Component {
+class PatientSearch extends Component {
   state = {};
   render() {
     return (
-      <div style={{background:"#FFFFFF",marginLeft:"3rem",marginRight:"3rem"}}>
+      <div
+        style={{
+          background: "#FFFFFF",
+          marginLeft: "3rem",
+          marginRight: "3rem",
+        }}
+      >
         <div
           style={{
             padding: "2rem",
@@ -21,9 +25,7 @@ class ArchiveSearch extends Component {
           }}
         >
           <div dis>
-            <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-              Prescription Archive
-            </p>
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>All Patients</p>
             <div
               style={{
                 display: "flex",
@@ -34,12 +36,12 @@ class ArchiveSearch extends Component {
               <TextField
                 variant="outlined"
                 label="Search For a Prescription"
-                style={{width:"700px"}}
+                style={{ width: "700px" }}
               ></TextField>
               <TextField
                 variant="outlined"
                 label="Select Date"
-                style={{width:"200px"}}
+                style={{ width: "200px" }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="start">
@@ -51,12 +53,24 @@ class ArchiveSearch extends Component {
             </div>
           </div>
         </div>
-        <PatientList />
-        <PatientList />
-        <PatientList />
+        <div
+          style={{
+            display: "grid",
+            gap:"1rem",
+            gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+          }}
+        >
+          <PatientBlock />
+          <PatientBlock />
+          <PatientBlock />
+          <PatientBlock />
+          <PatientBlock />
+          <PatientBlock />
+          <PatientBlock />
+        </div>
       </div>
     );
   }
 }
 
-export default ArchiveSearch;
+export default PatientSearch;
