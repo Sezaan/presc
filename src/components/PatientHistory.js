@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import PatientList from "./PatientList";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import { TextField } from "@material-ui/core";
 
 function PatientHistory(props) {
@@ -31,21 +29,16 @@ function PatientHistory(props) {
           >
             <TextField
               variant="outlined"
-              label="Search For a Prescription"
+              label="Patient Name"
               style={{ width: "660px" }}
+              value="Bruce Wayne"
             ></TextField>
             <TextField
               variant="outlined"
-              label="Select Date"
-              style={{ width: "220px" }}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="start">
-                    <CalendarTodayIcon />
-                  </InputAdornment>
-                ),
-              }}
-            ></TextField>
+              label="PatientID"
+              style={{width:"220px"}}
+              value="96240"
+              />
           </div>
           <div
             style={{
