@@ -14,6 +14,7 @@ import Preview from './components/Preview';
 import ArchivePage from './pages/ArchivePage'
 import PatientPage from './pages/PatientPage'
 import PatientHistoryPage from './pages/PatientHistoryPage'
+import EditHeader from './pages/EditHeader';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route exact path='/archive' component={ArchivePage}></Route>
           <Route exact path='/patient' component={PatientPage}></Route>
           <Route exact path='/patienthistory' component={PatientHistoryPage}></Route>
+          <Route exact path='/editheader' component={EditHeader}></Route>
         </Switch>
       </div>
     </Router>
