@@ -5,10 +5,17 @@ import IconButton  from '@material-ui/core/IconButton';
 
 class MedicineList extends Component {
     
+    getWidth=()=>{
+        if(this.props.width !== null){
+            return this.props.width
+        }
+        return "450px"
+    }
+
     render() { 
         return ( 
             <div style={{width:"400px", marginTop:"10px"}}>
-                <table style={{border:"1px solid #444444",width:"450px",height:"124px"}}>
+                <table style={{border:"1px solid #444444",width:"400px",height:"124px"}}>
                     <tr>
                         <td colSpan={3} >
                             <div style={{display:"flex",justifyContent:"space-between"}}>
