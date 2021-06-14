@@ -48,10 +48,10 @@ function EditProfile(props) {
       >
         <div>
           <p>
-            <a href="/forgotpass"></a>Change Password
+            <a href="/forgotpass">Change Password</a>
           </p>
           <p>
-            <a href="/forgotpass"></a>Forgot Password
+            <a href="/forgotpass">Forgot Password</a>
           </p>
         </div>
       </div>
