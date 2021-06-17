@@ -18,7 +18,7 @@ function PatientHistory(props) {
       >
         <div>
           <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-            Prescription Archive
+            Patient&nbsp;History
           </p>
           <div
             style={{
