@@ -1,10 +1,37 @@
 import React, { Component } from "react";
 import { TextField } from "@material-ui/core";
 import style from "../style.module.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Router } from "@material-ui/icons";
+import { useState } from "react";
 
 function EditProfile(props) {
+
+  const history = useHistory()
+  const [message,setMessage] = useState('')
+
+  function saveProfile(){
+    //get values from text fields
+    const name = document.getElementById('name').value
+    const phone = document.getElementById('phone').value
+
+    fetch("https://calm-plains-47385.herokuapp.com/doctor/edit_profile",{
+      method:"PUT",
+      headers: {
+        "prescription-generator": `${localStorage.getItem("auth_token")}`,
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify({
+        name:name,
+        phone:phone,
+      })}).then(response => response.json())
+      .then(result => {
+        console.log(result)
+      })
+    
+    console.log(name,phone,)
+  }
+
   return (
     <div
       style={{
@@ -28,13 +55,11 @@ function EditProfile(props) {
         </p>
         <br />
         <br />
-        <TextField variant="outlined" label="Full Name"></TextField>
-        <TextField variant="outlined" label="Email"></TextField>
-        <TextField variant="outlined" label="Phone"></TextField>
-        <TextField
-          variant="outlined"
-          label="Confirm Current Password"
-        ></TextField>
+        <TextField id="name" variant="outlined" label="Full Name"></TextField>
+
+        <TextField id='phone' variant="outlined" label="Phone"></TextField>
+        <p>{message}</p>
+        
       </div>
       <br />
       <br />
@@ -48,7 +73,7 @@ function EditProfile(props) {
       >
         <div>
           <p>
-            <a href="/forgotpass">Change Password</a>
+            <a href="/changepass">Change Password</a>
           </p>
           <p>
             <a href="/forgotpass">Forgot Password</a>
@@ -66,8 +91,8 @@ function EditProfile(props) {
           textAlign: "end",
         }}
       >
-        <button className={style.loginButton3}>Cancel</button>
-        <button className={style.loginButton4}>Save Profile</button>
+        <button className={style.loginButton3} onClick={()=>{history.push('/profile')}}>Cancel</button>
+        <button className={style.loginButton4} onClick={saveProfile}>Save Profile</button>
       </div>
     </div>
   );
