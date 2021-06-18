@@ -23,23 +23,18 @@ function Template(props) {
         boxShadow: "0px 0px 10px rgba(187, 187, 187, 0.25)",
         boxSizing: "border-box",
         borderRadius: "8px",
+        display:"flex",
         marginBottom: "1rem",
+        flexWrap:"wrap"
       }}
     >
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(400px,1fr))",
-          gap: "0.5rem",
-          padding: "2rem",
-        }}
-      >
-        <div
           style={{
             display: "flex",
             flexWrap: "wrap",
+            flex:"0 0 19%",
             flexShrink: "-moz-initial",
-            justifyContent: "flex-end",
+
           }}
         >
           <div
@@ -59,6 +54,16 @@ function Template(props) {
             <TemplateList />
           </div>
         </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+          gap: "0.5rem",
+          padding: "2rem",
+          flex:"0 0 81%",
+        }}
+      >
+        
         <div
           style={{
             display: "flex",
@@ -150,7 +155,7 @@ function Template(props) {
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
-                  justifyContent: "flex-end",
+                  //justifyContent: "flex-end",
                 }}
               >
                 {enableEdit ? (
@@ -274,9 +279,9 @@ function TemplateList(props) {
       >
         <p>Template Name</p>
 
-        <MoreHorizIcon fontSize="small" style={{ cursor: "pointer" }} />
+        <MoreHorizIcon fontSize="small"  style={{ cursor: "pointer"}} />
       </div>
-      <p> disease name, desease naem</p>
+      <p> disease name, desease name</p>
       <p>Last Edit: June 10, 2021</p>
     </div>
   );
