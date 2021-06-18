@@ -33,7 +33,9 @@ function Login(props) {
         console.log(result)
         if (result.token) {
           console.log(result.token);
-          history.push("/");
+          localStorage.setItem("auth_token", result.token);
+          localStorage.setItem('login',true)
+          history.push("/profile");
         }
         else{
           setResponseMsg(result.msg)

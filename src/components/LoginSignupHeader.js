@@ -11,7 +11,7 @@ function LoginSignupHeader(props) {
     
 
      function handleLoginButton(){
-        history.push('/login')
+        history.push('/')
     }
 
     
