@@ -14,7 +14,6 @@ class Prescription extends Component {
             <Header></Header>
             <div style={{ margin:"auto",background: "#E5E5E5",display:"grid",justifySelf:"center", padding:"10px 20px",width:"fit-content"}}>
               <ButtonList />
-              <PatientInfo />
               <GeneralPrescription />
             </div>
             <Footer />

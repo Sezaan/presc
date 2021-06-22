@@ -1,6 +1,6 @@
 import { TextField } from "@material-ui/core";
 import React, { Component } from "react";
-import MyContext from "./MyContext";
+import PreviewContext from "../context/PreviewContext";
 
 class Preview extends Component {
   render() {
@@ -203,6 +203,6 @@ class Preview extends Component {
   }
 }
 
-Preview.contextType = MyContext;
+Preview.contextType = PreviewContext;
 
 export default Preview;

@@ -17,6 +17,9 @@ import PatientHistoryPage from './pages/PatientHistoryPage'
 import EditHeader from './pages/EditHeader';
 import TemplatePage from './pages/TemplatePage';
 import ProfilePage from './pages/ProfilePage';
+import VerifyEmail from './pages/VerifyEmail';
+import EditProfilePage from './pages/EditProfilePage';
+import ChangePasswordPage from './pages/ChangePasswordPage';
 
 
 
@@ -26,8 +29,8 @@ function App() {
     <Router>
       <div >
         <Switch>
-          <Route exact path='/' component={Prescription}></Route>
-          <Route exact path='/login' component={LoginPage}></Route>
+          <Route exact path='/prescription' component={Prescription}></Route>
+          <Route exact path={'/login','/'} component={LoginPage}></Route>
           <Route exact path='/signup' component={SignupPage}></Route>
           <Route exact path='/forgotpass' component={ForgotPassworkPage}></Route>
           <Route exact path='/resetpass' component={PasswordResetPage}></Route>
@@ -38,6 +41,9 @@ function App() {
           <Route exact path='/editheader' component={EditHeader}></Route>
           <Route exact path='/template' component={TemplatePage}></Route>
           <Route exact path='/profile' component={ProfilePage}></Route>
+          <Route exact path='/email_verify' component={VerifyEmail}></Route>
+          <Route exact path='/edit_profile' component={EditProfilePage}></Route>
+          <Route exact path='/changepass' component={ChangePasswordPage}></Route>
         </Switch>
       </div>
     </Router>

@@ -4,7 +4,8 @@ import "./App.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import LoginPage from "./pages/Prescription";
-import MyContext, { MyContextProvider } from "./components/MyContext";
+import PreviewContext, { PreviewContextProvider } from "./context/PreviewContext";
+import PatientContext,{PatientContextProvider} from "./context/PatientContext"
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -12,9 +13,9 @@ styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css
 document.head.appendChild(styleLink);
 
 ReactDOM.render(
-  <MyContextProvider>
+  <PreviewContextProvider>
     <App></App>
-  </MyContextProvider>,
+  </PreviewContextProvider>,
   document.getElementById("root")
 );
 
