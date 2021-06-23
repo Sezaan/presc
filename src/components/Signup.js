@@ -1,14 +1,13 @@
 import { TextField } from "@material-ui/core";
 import React, { Component, useState } from "react";
 import style from "../style.module.css";
-import {Modal} from "semantic-ui-react"
-import {useHistory } from "react-router";
+import { Modal } from "semantic-ui-react";
+import { useHistory } from "react-router";
 
 function Signup(props) {
-
   const [openModal, setOpenModal] = useState(false);
   const [responseMsg, setResponseMsg] = useState(null);
-  const history  = useHistory()
+  const history = useHistory();
 
   function handleCreateAccount() {
     // reading the elements from the text fields
@@ -16,7 +15,6 @@ function Signup(props) {
     const mobile = document.getElementById("mobile").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    
 
     //sending post request to the server
     //check the post format carefully
@@ -35,20 +33,38 @@ function Signup(props) {
     })
       .then((responseFromServer) => responseFromServer.json())
       .then((result) => {
-    //checking if the post is successful
-        if(result.token){
-          console.log(result.token)
-          history.push("/")
-        }
-        else{
-          setResponseMsg(result.msg)
-          setOpenModal(true)
+        //checking if the post is successful
+        if (result.token) {
+          console.log(result.token);
+          fetch('https://calm-plains-47385.herokuapp.com/doctor/edit_profile',
+          {
+            method:"PUT",
+            headers:{
+              'prescription-generator' : `${result.token}`,
+              'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+              name : username,
+              phone : mobile,
+              header : {
+                name: '',
+                address:'',
+                phone:'',
+                work:'',
+                email:'',
+                degree:[],
+                lines:[]
+              },
+            })
+          }
+          ).then(response => response.json()).then(result => console.log(result))
+          history.push('/')
+        } else {
+          setResponseMsg(result.msg);
+          setOpenModal(true);
         }
       });
   }
-
-  // redirect to login page
-
 
   return (
     <div className={style.loginContainer}>
@@ -87,18 +103,25 @@ function Signup(props) {
           Create an Account
         </button>
         <Modal
-        closeIcon
-        onOpen={()=> setOpenModal(true)}
-        onClose={()=> setOpenModal(false)}
-        open={openModal}
-        size="small"
+          closeIcon
+          onOpen={() => setOpenModal(true)}
+          onClose={() => setOpenModal(false)}
+          open={openModal}
+          size="small"
         >
-          <Modal.Header>
-            There has been an error
-          </Modal.Header>
+          <Modal.Header>There has been an error</Modal.Header>
           <Modal.Description>
-            <div style={{margin:"auto",fontSize:"20px",fontWeight:"bolder",height:"100px",color:"red",padding:"2rem"}}>
-                {responseMsg}
+            <div
+              style={{
+                margin: "auto",
+                fontSize: "20px",
+                fontWeight: "bolder",
+                height: "100px",
+                color: "red",
+                padding: "2rem",
+              }}
+            >
+              {responseMsg}
             </div>
           </Modal.Description>
         </Modal>
@@ -106,7 +129,12 @@ function Signup(props) {
       </div>
       <div className={style.loginBox2}>
         <span className={style.loginText3}>Have an Account?</span>
-        <button className={style.loginButton2} onClick={() => history.push('/login')}>Login</button>
+        <button
+          className={style.loginButton2}
+          onClick={() => history.push("/login")}
+        >
+          Login
+        </button>
       </div>
     </div>
   );

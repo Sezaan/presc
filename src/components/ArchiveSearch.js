@@ -1,14 +1,49 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import style from "../style.module.css";
 import { flushSync } from "react-dom";
-import PatientList from "./PatientBlock";
+import PatientList from "./PatientList";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
-class ArchiveSearch extends Component {
-  state = {};
-  render() {
+function ArchiveSearch(props){
+
+    const [date,setDate] = useState('')
+    const [prescription,setPrescription] = useState('')
+    const [url,setUrl] = useState('')
+    const [list,setList] = useState([])
+
+    useEffect(() => {
+      fetch(url)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+      })
+    })
+
+    function setStateDate(){
+      setDate(document.getElementById('date').value)
+    }
+    
+    function setStatePrescription(){
+      setPrescription(document.getElementById('prescription').value)
+    }
+
+    function setStateUrl(){
+      if(date === "" && prescription !== ""){
+        setUrl()
+      }
+      else if(date !== "" && prescription === ""){
+
+      }
+      else if(date === "" && prescription === ""){
+        setUrl()
+      }
+      else{
+        setUrl()
+      }
+    }
+    
     return (
       <div style={{background:"#FFFFFF",marginLeft:"3rem",marginRight:"3rem"}}>
         <div
@@ -32,11 +67,13 @@ class ArchiveSearch extends Component {
               }}
             >
               <TextField
+                id="prescription"
                 variant="outlined"
                 label="Search For a Prescription"
                 style={{width:"700px"}}
               ></TextField>
               <TextField
+                id="date"
                 variant="outlined"
                 label="Select Date"
                 style={{width:"200px"}}
@@ -57,6 +94,6 @@ class ArchiveSearch extends Component {
       </div>
     );
   }
-}
+
 
 export default ArchiveSearch;

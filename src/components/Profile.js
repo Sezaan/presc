@@ -5,9 +5,13 @@ import { useHistory, useParams } from "react-router-dom";
 
 function Profile(pros) {
   const [profileInfo, setProfileInfo] = useState({});
-  const [header, setHeader] = useState({ });
+  const [name, setName] = useState("");
   const [degree, setDegree] = useState([]);
+  const [work, setWork] = useState("");
   const [lines, setLines] = useState([]);
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const history = useHistory();
   // getting profile information
   useEffect(() => {
@@ -19,19 +23,36 @@ function Profile(pros) {
     })
       .then((respone) => respone.json())
       .then((result) => {
-
-        
         setProfileInfo(result);
-
-        setHeader(result.header);
-        if(result.header.degrees)
-        setDegree(result.header.degrees);
-        if(result.header.lines)
-        setLines(result.header.lines);
-
+        if (profileInfo.name) setHeaders();
         localStorage.setItem("email", result.email);
       });
-  });
+  }, [profileInfo]);
+
+  function setHeaders() {
+    if (profileInfo.header["name"]) {
+      setName(profileInfo.header.name);
+    }
+    if (profileInfo.header["address"]) {
+      setAddress(profileInfo.header.address);
+    }
+    if (profileInfo.header["phone"]) {
+      setPhone(profileInfo.header.phone);
+    }
+    if (profileInfo.header["email"]) {
+      setEmail(profileInfo.header.email);
+    }
+    if (profileInfo.header["degree"]) {
+      setDegree(profileInfo.header.degree);
+    }
+    if (profileInfo.header["lines"]) {
+      setLines(profileInfo.header.lines);
+    }
+    if (profileInfo.header["work"]) {
+      setWork(profileInfo.header.work);
+    }
+    console.log(name,address,work,email,lines,degree)
+  }
 
   //sending verify email
   function handleVerify() {
@@ -196,7 +217,11 @@ function Profile(pros) {
       <span style={{ fontWeight: "bold", fontSize: "16px" }}>
         Prescription Header
       </span>
-      <Button onClick={() => history.push('/editheader')} variant="outlined" style={{ marginLeft: "2rem" }}>
+      <Button
+        onClick={() => history.push("/editheader")}
+        variant="outlined"
+        style={{ marginLeft: "2rem" }}
+      >
         Edit Page Setup
       </Button>
       <hr />
@@ -216,7 +241,7 @@ function Profile(pros) {
                 <span>Prescription Name</span>
               </td>
               <td>
-                <span>{header.name}</span>
+                <span>{name}</span>
               </td>
             </tr>
             <br />
@@ -224,7 +249,11 @@ function Profile(pros) {
               <td>
                 <span>Degree</span>
               </td>
-              <td>{degree.map(item => <p>{item.value}</p>)}</td>
+              <td>
+                {degree.map((item) => (
+                  <p>{item.value}</p>
+                ))}
+              </td>
             </tr>
             <br />
             <tr>
@@ -232,7 +261,7 @@ function Profile(pros) {
                 <span>Hospital/Workplace</span>
               </td>
               <td>
-                <span>{header.work}</span>
+                <span>{work}</span>
               </td>
             </tr>
             <br />
@@ -241,7 +270,7 @@ function Profile(pros) {
                 <span>Chamber Address</span>
               </td>
               <td>
-                <span>{header.address}</span>
+                <span>{address}</span>
               </td>
             </tr>
             <br />
@@ -250,7 +279,7 @@ function Profile(pros) {
                 <span>Chamber Phone</span>
               </td>
               <td>
-                <span>{header.phone}</span>
+                <span>{phone}</span>
               </td>
             </tr>
             <br />
@@ -259,7 +288,7 @@ function Profile(pros) {
                 <span>Chamber Email</span>
               </td>
               <td>
-                <span>{header.email}</span>
+                <span>{email}</span>
               </td>
             </tr>
             <br />
@@ -267,7 +296,11 @@ function Profile(pros) {
               <td>
                 <span>Extra Lines</span>
               </td>
-              <td>{lines.map(item => <p>{item.value}</p>)}</td>
+              <td>
+                {lines.map((item) => (
+                  <p>{item.value}</p>
+                ))}
+              </td>
             </tr>
           </tbody>
         </table>

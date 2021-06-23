@@ -21,11 +21,11 @@ function PatientBlock(props) {
       }}
     >
       <div>
-        <p style={{ fontWeight: "bold", fontSize: "20px" }}>Bruce Wayne</p>
-        <p>male 31 y(1990)</p>
-        <p>Phone: 01231232211</p>
-        <p>ID:96240</p>
-        <p>Last Visit: March 21, 2020</p>
+        <p style={{ fontWeight: "bold", fontSize: "20px" }}>{props.name}</p>
+        <p>{props.gender} {props.age} y({props.DOB})</p>
+        <p>Phone: {props.phone}</p>
+        <p>ID:{props.short_id}</p>
+        <p>Last Visit: {props.last_visit}</p>
       </div>
       <div>
         <Button >
